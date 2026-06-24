@@ -24,5 +24,64 @@
 <body>
     <div id="root"></div>
     <script src="./browser.js?v=1782266953893" crossorigin="anonymous"></script>
+<!--BUILD_ERROR_OVERLAY_START-->
+<style>
+#build-error-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 2147483647; background: hsl(0, 70%, 28%); color: #fff; padding: 6px 10px; font: 12px/1.4 monospace; cursor: pointer; border-bottom: 1px solid hsl(0, 70%, 50%); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#build-error-modal { position: fixed; inset: 0; z-index: 2147483647; background: rgba(0,0,0,0.9); overflow: auto; padding: 40px 60px; box-sizing: border-box; display: none; }
+#build-error-modal.open { display: block; }
+#build-error-modal pre { color: hsl(0, 60%, 85%); font: 13px/1.5 monospace; white-space: pre-wrap; word-break: break-word; margin: 0; }
+#build-error-modal .close { position: fixed; top: 16px; right: 16px; background: hsl(0, 70%, 50%); color: #fff; border: 0; padding: 6px 14px; font: 12px/1 monospace; cursor: pointer; }
+</style>
+<div id="build-error-banner" title="Error: DELIBERATE BUILD ERROR — testing the deploy overlay; will be reverted once verified on the live page
+    at Object.&lt;anonymous&gt; (/root/generals-build/src/browser.tsx:12:7)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1854:14)
+    at Module._compile (/root/generals-build/node_modules/typenode/compileCache.js:210:28)
+    at Object.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1985:10)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1577:32)
+    at Module.load (/root/generals-build/node_modules/typenode/compileDirFlags.ts:60:23)
+    at Module._load (node:internal/modules/cjs/loader:1379:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1600:12)
+    at Module.require (/root/generals-build/node_modules/typenode/compileRecordModuleRequires.ts:22:17)
+    at require (node:internal/modules/helpers:153:16)
+    at [eval]:4:13
+    at runScriptInThisContext (node:internal/vm:219:10)
+    at node:internal/process/execution:451:12
+    at [eval]-wrapper:6:24
+    at runScriptInContext (node:internal/process/execution:449:60)
+    at evalFunction (node:internal/process/execution:283:30)
+    at evalTypeScript (node:internal/process/execution:295:3)
+    at node:internal/main/eval_string:71:3">Build failed at 2026-06-24T02:34:08.931Z — DELIBERATE BUILD ERROR — testing the deploy overlay; will be reverted once verified on the live page</div>
+<div id="build-error-modal"><button class="close">close</button><pre id="build-error-stack">Error: DELIBERATE BUILD ERROR — testing the deploy overlay; will be reverted once verified on the live page
+    at Object.&lt;anonymous&gt; (/root/generals-build/src/browser.tsx:12:7)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1854:14)
+    at Module._compile (/root/generals-build/node_modules/typenode/compileCache.js:210:28)
+    at Object.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1985:10)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1577:32)
+    at Module.load (/root/generals-build/node_modules/typenode/compileDirFlags.ts:60:23)
+    at Module._load (node:internal/modules/cjs/loader:1379:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.&lt;anonymous&gt; (node:internal/modules/cjs/loader:1600:12)
+    at Module.require (/root/generals-build/node_modules/typenode/compileRecordModuleRequires.ts:22:17)
+    at require (node:internal/modules/helpers:153:16)
+    at [eval]:4:13
+    at runScriptInThisContext (node:internal/vm:219:10)
+    at node:internal/process/execution:451:12
+    at [eval]-wrapper:6:24
+    at runScriptInContext (node:internal/process/execution:449:60)
+    at evalFunction (node:internal/process/execution:283:30)
+    at evalTypeScript (node:internal/process/execution:295:3)
+    at node:internal/main/eval_string:71:3</pre></div>
+<script>
+(function(){
+    var banner = document.getElementById("build-error-banner");
+    var modal = document.getElementById("build-error-modal");
+    var closeBtn = modal.querySelector(".close");
+    banner.addEventListener("click", function(){ modal.classList.add("open"); });
+    closeBtn.addEventListener("click", function(e){ e.stopPropagation(); modal.classList.remove("open"); });
+    modal.addEventListener("click", function(e){ if (e.target === modal) modal.classList.remove("open"); });
+})();
+</script>
+<!--BUILD_ERROR_OVERLAY_END-->
 </body>
 </html>
